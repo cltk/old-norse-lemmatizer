@@ -119,10 +119,49 @@ class OldNorseVerb:
     def _past_mediopassive_strong(self):
         pass
 
+    def _present_active_weak_subjunctive(self):
+        pass
+
+    def _past_active_weak_subjunctive(self):
+        pass
+
+    def _present_active_strong_subjunctive(self):
+        pass
+
+    def _past_active_strong_subjunctive(self):
+        pass
+
+    def _present_mediopassive_weak_subjunctive(self):
+        pass
+
+    def _past_mediopassive_weak_subjunctive(self):
+        pass
+
+    def _present_mediopassive_strong_subjunctive(self):
+        pass
+
+    def _past_mediopassive_strong_subjunctive(self):
+        pass
+
 
 class StrongOldNorseVerb(OldNorseVerb):
     def __init__(self):
         super().__init__()
+
+        self.sng = ""
+        self.s_sng = None
+        self.sp_sng = None
+
+        self.sfg3et = ""
+        self.s_sfg3et = None
+        self.sp_sfg3et = None
+
+        self.stgken = ""
+        self.s_stgken = None
+        self.sp_stgken = None
+
+        self.subclass = 0
+        self.syllabified = []
 
     def set_canonic_forms(self, canonic_forms: List[str]):
         """
@@ -160,31 +199,51 @@ class StrongOldNorseVerb(OldNorseVerb):
         else:
             raise ValueError("Not a correct argument")
 
-    def _present_active_weak(self):
-        print()
-        l = []
-
-        pass
-
-    def _past_active_weak(self):
-        pass
-
     def _present_active_strong(self):
         pass
 
     def _past_active_strong(self):
         pass
 
-    def _present_mediopassive_weak(self):
-        pass
-
-    def _past_mediopassive_weak(self):
-        pass
-
     def _present_mediopassive_strong(self):
         pass
 
     def _past_mediopassive_strong(self):
+        pass
+
+    def _present_active_strong_subjunctive(self):
+        if self.sng == "vera":
+            print("sé")
+            print("sér")
+            print("sé")
+            print("sém")
+            print("séð")
+            print("sé")
+        elif self.sng == "sjá":
+            print("sjá")
+            print("sér")
+            print("sé")
+            print("sém")
+            print("séð")
+            print("sé")
+        else:
+            subjunctive_root = self.sng[:-1] if self.sng[-1] == "a" else self.sng
+
+            print(subjunctive_root + "a")
+            subjunctive_root = subjunctive_root[:-1] if subjunctive_root[-1] == "j" else subjunctive_root
+            print(subjunctive_root + "ir")
+            print(subjunctive_root + "i")
+            print(subjunctive_root + "im")
+            print(subjunctive_root + "ið")
+            print(subjunctive_root + "i")
+
+    def _past_active_strong_subjunctive(self):
+        pass
+
+    def _present_mediopassive_strong_subjunctive(self):
+        pass
+
+    def _past_mediopassive_strong_subjunctive(self):
         pass
 
 
@@ -294,22 +353,50 @@ class WeakOldNorseVerb(OldNorseVerb):
     def _past_active_weak(self):
         pass
 
-    def _present_active_strong(self):
-        pass
-
-    def _past_active_strong(self):
-        pass
-
     def _present_mediopassive_weak(self):
         pass
 
     def _past_mediopassive_weak(self):
         pass
 
-    def _present_mediopassive_strong(self):
+    def _present_active_weak_subjunctive(self):
+        subjunctive_root = self.sng[:-1] if self.sng[-1] == "a" else self.sng
+
+        print(subjunctive_root+"a")
+        subjunctive_root = subjunctive_root[:-1] if subjunctive_root[-1] == "j" else subjunctive_root
+        print(subjunctive_root+"ir")
+        print(subjunctive_root+"i")
+        print(subjunctive_root+"im")
+        print(subjunctive_root+"ið")
+        print(subjunctive_root+"i")
+
+    def _past_active_weak_subjunctive(self):
+        subjunctive_root = self.sfg3et[:-1] if self.sng[-1] == "a" else self.sfg3et
+
+        if self.subclass in [1, 2]:
+            print(subjunctive_root + "a")
+            subjunctive_root = subjunctive_root[:-1] if subjunctive_root[-1] == "j" else subjunctive_root
+            print(subjunctive_root + "ir")
+            print(subjunctive_root + "i")
+            print(subjunctive_root + "im")
+            print(subjunctive_root + "ið")
+            print(subjunctive_root + "i")
+
+        elif self.subclass in [3, 4]:
+            # TODO apply i-umlaut to stem
+            subjunctive_root
+            print(subjunctive_root + "a")
+            subjunctive_root = subjunctive_root[:-1] if subjunctive_root[-1] == "j" else subjunctive_root
+            print(subjunctive_root + "ir")
+            print(subjunctive_root + "i")
+            print(subjunctive_root + "im")
+            print(subjunctive_root + "ið")
+            print(subjunctive_root + "i")
+
+    def _present_mediopassive_weak_subjunctive(self):
         pass
 
-    def _past_mediopassive_strong(self):
+    def _past_mediopassive_weak_subjunctive(self):
         pass
 
     def classify(self):

@@ -1,2 +1,2 @@
-cltk
+-e git+https://github.com/clemsciences/cltk.git@old-norse-verbs#egg=cltk
 numpy

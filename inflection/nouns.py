@@ -17,7 +17,7 @@ Commented doctests do not work as expected, because there is no way, for now, to
 import cltk.inflection.utils as decl_utils
 from cltk.phonology.syllabify import Syllabifier, Syllable
 from cltk.corpus.old_norse.syllabifier import invalid_onsets, BACK_TO_FRONT_VOWELS, VOWELS, CONSONANTS
-from cltk.inflection.old_norse.phonemic_rules import extract_common_stem, apply_u_umlaut, has_u_umlaut
+from inflection.phonemic_rules import extract_common_stem, apply_u_umlaut, has_u_umlaut
 
 __author__ = ["Clément Besnier <clemsciences@aol.com>", ]
 
