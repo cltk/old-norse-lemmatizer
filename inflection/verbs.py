@@ -94,55 +94,52 @@ class OldNorseVerb:
 
         return self.forms
 
-    def _present_active_weak(self):
-        print()
-        l = []
-
+    def present_active_weak(self):
         pass
 
-    def _past_active_weak(self):
+    def past_active_weak(self):
         pass
 
-    def _present_active_strong(self):
+    def present_active_strong(self):
         pass
 
-    def _past_active_strong(self):
+    def past_active_strong(self):
         pass
 
-    def _present_mediopassive_weak(self):
+    def present_mediopassive_weak(self):
         pass
 
-    def _past_mediopassive_weak(self):
+    def past_mediopassive_weak(self):
         pass
 
-    def _present_mediopassive_strong(self):
+    def present_mediopassive_strong(self):
         pass
 
-    def _past_mediopassive_strong(self):
+    def past_mediopassive_strong(self):
         pass
 
-    def _present_active_weak_subjunctive(self):
+    def present_active_weak_subjunctive(self):
         pass
 
-    def _past_active_weak_subjunctive(self):
+    def past_active_weak_subjunctive(self):
         pass
 
-    def _present_active_strong_subjunctive(self):
+    def present_active_strong_subjunctive(self):
         pass
 
-    def _past_active_strong_subjunctive(self):
+    def past_active_strong_subjunctive(self):
         pass
 
-    def _present_mediopassive_weak_subjunctive(self):
+    def present_mediopassive_weak_subjunctive(self):
         pass
 
-    def _past_mediopassive_weak_subjunctive(self):
+    def past_mediopassive_weak_subjunctive(self):
         pass
 
-    def _present_mediopassive_strong_subjunctive(self):
+    def present_mediopassive_strong_subjunctive(self):
         pass
 
-    def _past_mediopassive_strong_subjunctive(self):
+    def past_mediopassive_strong_subjunctive(self):
         pass
 
 
@@ -207,19 +204,19 @@ class StrongOldNorseVerb(OldNorseVerb):
         else:
             raise ValueError("Not a correct argument")
 
-    def _present_active_strong(self):
+    def present_active_strong(self):
         pass
 
-    def _past_active_strong(self):
+    def past_active_strong(self):
         pass
 
-    def _present_mediopassive_strong(self):
+    def present_mediopassive_strong(self):
         pass
 
-    def _past_mediopassive_strong(self):
+    def past_mediopassive_strong(self):
         pass
 
-    def _present_active_strong_subjunctive(self):
+    def present_active_strong_subjunctive(self):
         if self.sng == "vera":
             print("sé")
             print("sér")
@@ -245,13 +242,13 @@ class StrongOldNorseVerb(OldNorseVerb):
             print(subjunctive_root + "ið")
             print(subjunctive_root + "i")
 
-    def _past_active_strong_subjunctive(self):
+    def past_active_strong_subjunctive(self):
         pass
 
-    def _present_mediopassive_strong_subjunctive(self):
+    def present_mediopassive_strong_subjunctive(self):
         pass
 
-    def _past_mediopassive_strong_subjunctive(self):
+    def past_mediopassive_strong_subjunctive(self):
         pass
 
 
@@ -325,13 +322,13 @@ class WeakOldNorseVerb(OldNorseVerb):
         else:
             raise ValueError("Not a correct argument")
 
-    def _present_active_weak(self):
+    def present_active_weak(self):
         """
         Weak verbs
         I
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðinn"])
-        >>> verb._present_active_weak()
+        >>> verb.present_active_weak()
         kalla
         kallar
         kallar
@@ -342,7 +339,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         II
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["mæla", "mælti", "mæltr"])
-        >>> verb._present_active_weak()
+        >>> verb.present_active_weak()
         mæli
         mælir
         mælir
@@ -353,7 +350,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         III
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
-        >>> verb._present_active_weak()
+        >>> verb.present_active_weak()
         tel
         telr
         telr
@@ -363,8 +360,8 @@ class WeakOldNorseVerb(OldNorseVerb):
 
         IV
         >>> verb = WeakOldNorseVerb()
-        >>> verb.set_canonic_forms(["vaka", "vakta", "vakat"])
-        >>> verb._present_active_weak()
+        >>> verb.set_canonic_forms(["vaka", "vakti", "vakat"])
+        >>> verb.present_active_weak()
         vaki
         vakir
         vakir
@@ -479,22 +476,76 @@ class WeakOldNorseVerb(OldNorseVerb):
                 print(stem + "ið")
                 print(self.sng)
 
-    def _past_active_weak(self):
-        pass
-
-    def _present_mediopassive_weak(self):
-        pass
-
-    def _past_mediopassive_weak(self):
-        pass
-
-    def _present_active_weak_subjunctive(self):
+    def past_active_weak(self):
         """
         Weak verbs
         I
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðinn"])
-        >>> verb._present_active_weak_subjunctive()
+        >>> verb.past_active_weak()
+        kallaða
+        kallaðir
+        kallaði
+        kölluðum
+        kölluðuð
+        kölluðu
+
+        II
+        >>> verb = WeakOldNorseVerb()
+        >>> verb.set_canonic_forms(["mæla", "mælti", "mæltr"])
+        >>> verb.past_active_weak()
+        mælta
+        mæltir
+        mælti
+        mæltum
+        mæltuð
+        mæltu
+
+        III
+        >>> verb = WeakOldNorseVerb()
+        >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
+        >>> verb.past_active_weak()
+        talda
+        taldir
+        taldi
+        töldum
+        tölduð
+        töldu
+
+        IV
+        >>> verb = WeakOldNorseVerb()
+        >>> verb.set_canonic_forms(["vaka", "vakti", "vakat"])
+        >>> verb.past_active_weak()
+        vakta
+        vaktir
+        vakti
+        vöktum
+        vöktuð
+        vöktu
+
+        :return:
+        """
+        stem = self.sfg3et[:-1]
+        print(stem+"a")
+        print(self.sfg3et+"r")
+        print(self.sfg3et)
+        print(apply_u_umlaut(stem)+"um")
+        print(apply_u_umlaut(stem)+"uð")
+        print(apply_u_umlaut(stem)+"u")
+
+    def present_mediopassive_weak(self):
+        pass
+
+    def past_mediopassive_weak(self):
+        pass
+
+    def present_active_weak_subjunctive(self):
+        """
+        Weak verbs
+        I
+        >>> verb = WeakOldNorseVerb()
+        >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðinn"])
+        >>> verb.present_active_weak_subjunctive()
         kalla
         kallir
         kalli
@@ -506,7 +557,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         II
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["mæla", "mælti", "mæltr"])
-        >>> verb._present_active_weak_subjunctive()
+        >>> verb.present_active_weak_subjunctive()
         mæla
         mælir
         mæli
@@ -517,7 +568,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         III
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
-        >>> verb._present_active_weak_subjunctive()
+        >>> verb.present_active_weak_subjunctive()
         telja
         telir
         teli
@@ -528,7 +579,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         IV
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["vaka", "vakta", "vakat"])
-        >>> verb._present_active_weak_subjunctive()
+        >>> verb.present_active_weak_subjunctive()
         vaka
         vakir
         vaki
@@ -549,13 +600,13 @@ class WeakOldNorseVerb(OldNorseVerb):
         print(subjunctive_root+"ið")
         print(subjunctive_root+"i")
 
-    def _past_active_weak_subjunctive(self):
+    def past_active_weak_subjunctive(self):
         """
         Weak verbs
         I
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðinn"])
-        >>> verb._past_active_weak_subjunctive()
+        >>> verb.past_active_weak_subjunctive()
         kallaða
         kallaðir
         kallaði
@@ -566,7 +617,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         II
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["mæla", "mælti", "mæltr"])
-        >>> verb._past_active_weak_subjunctive()
+        >>> verb.past_active_weak_subjunctive()
         mælta
         mæltir
         mælti
@@ -577,7 +628,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         III
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
-        >>> verb._past_active_weak_subjunctive()
+        >>> verb.past_active_weak_subjunctive()
         telda
         teldir
         teldi
@@ -589,7 +640,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         IV
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["vaka", "vakti", "vakat"])
-        >>> verb._past_active_weak_subjunctive()
+        >>> verb.past_active_weak_subjunctive()
         vekta
         vektir
         vekti
@@ -621,10 +672,10 @@ class WeakOldNorseVerb(OldNorseVerb):
             print(subjunctive_root + "ið")
             print(subjunctive_root + "i")
 
-    def _present_mediopassive_weak_subjunctive(self):
+    def present_mediopassive_weak_subjunctive(self):
         pass
 
-    def _past_mediopassive_weak_subjunctive(self):
+    def past_mediopassive_weak_subjunctive(self):
         pass
 
     def classify(self):
