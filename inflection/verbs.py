@@ -94,52 +94,31 @@ class OldNorseVerb:
 
         return self.forms
 
-    def present_active_weak(self):
+    def present_active(self):
         pass
 
-    def past_active_weak(self):
+    def past_active(self):
         pass
 
-    def present_active_strong(self):
+    def present_mediopassive(self):
         pass
 
-    def past_active_strong(self):
+    def past_mediopassive(self):
         pass
 
-    def present_mediopassive_weak(self):
+    def present_active_subjunctive(self):
         pass
 
-    def past_mediopassive_weak(self):
+    def past_active_subjunctive(self):
         pass
 
-    def present_mediopassive_strong(self):
+    def present_mediopassive_subjunctive(self):
         pass
 
-    def past_mediopassive_strong(self):
+    def past_mediopassive_subjunctive(self):
         pass
 
-    def present_active_weak_subjunctive(self):
-        pass
-
-    def past_active_weak_subjunctive(self):
-        pass
-
-    def present_active_strong_subjunctive(self):
-        pass
-
-    def past_active_strong_subjunctive(self):
-        pass
-
-    def present_mediopassive_weak_subjunctive(self):
-        pass
-
-    def past_mediopassive_weak_subjunctive(self):
-        pass
-
-    def present_mediopassive_strong_subjunctive(self):
-        pass
-
-    def past_mediopassive_strong_subjunctive(self):
+    def past_participle(self):
         pass
 
 
@@ -273,14 +252,14 @@ class StrongOldNorseVerb(OldNorseVerb):
         elif signature == ['á', 'æ', 'é', 'é', 'á']:
             self.subclass = 7
 
-    def present_active_strong(self):
+    def present_active(self):
         """
         Strong verbs
 
         I
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["líta", "lítr", "leit", "litu", "litinn"])
-        >>> verb.present_active_strong()
+        >>> verb.present_active()
         lít
         lítr
         lítr
@@ -291,7 +270,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         II
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bjóða", "býðr", "bauð", "buðu", "boðinn"])
-        >>> verb.present_active_strong()
+        >>> verb.present_active()
         býð
         býðr
         býðr
@@ -302,7 +281,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         III
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["verða", "verðr", "varð", "urðu", "orðinn"])
-        >>> verb.present_active_strong()
+        >>> verb.present_active()
         verð
         verðr
         verðr
@@ -313,7 +292,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         IV
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bera", "berr", "bar", "báru", "borinn"])
-        >>> verb.present_active_strong()
+        >>> verb.present_active()
         ber
         berr
         berr
@@ -324,7 +303,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         V
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["gefa", "gefr", "gaf", "gáfu", "gefinn"])
-        >>> verb.present_active_strong()
+        >>> verb.present_active()
         gef
         gefr
         gefr
@@ -335,7 +314,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         VI
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["fara", "ferr", "fór", "fóru", "farinn"])
-        >>> verb.present_active_strong()
+        >>> verb.present_active()
         fer
         ferr
         ferr
@@ -346,7 +325,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         VII
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["ráða", "ræðr", "réð", "réðu", "ráðinn"])
-        >>> verb.present_active_strong()
+        >>> verb.present_active()
         ræð
         ræðr
         ræðr
@@ -365,14 +344,14 @@ class StrongOldNorseVerb(OldNorseVerb):
         print(plural_stem+"ið")
         print(self.sng)
 
-    def past_active_strong(self):
+    def past_active(self):
         """
         Strong verbs
 
         I
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["líta", "lítr", "leit", "litu", "litinn"])
-        >>> verb.past_active_strong()
+        >>> verb.past_active()
         leit
         leizt
         leit
@@ -383,7 +362,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         II
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bjóða", "býðr", "bauð", "buðu", "boðinn"])
-        >>> verb.past_active_strong()
+        >>> verb.past_active()
         bauð
         bautt
         bauð
@@ -394,7 +373,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         III
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["verða", "verðr", "varð", "urðu", "orðinn"])
-        >>> verb.past_active_strong()
+        >>> verb.past_active()
         varð
         vart
         varð
@@ -405,7 +384,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         IV
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bera", "berr", "bar", "báru", "borinn"])
-        >>> verb.past_active_strong()
+        >>> verb.past_active()
         bar
         bart
         bar
@@ -416,7 +395,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         V
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["gefa", "gefr", "gaf", "gáfu", "gefinn"])
-        >>> verb.past_active_strong()
+        >>> verb.past_active()
         gaf
         gaft
         gaf
@@ -427,7 +406,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         VI
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["fara", "ferr", "fór", "fóru", "farinn"])
-        >>> verb.past_active_strong()
+        >>> verb.past_active()
         fór
         fórt
         fór
@@ -438,7 +417,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         VII
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["ráða", "ræðr", "réð", "réðu", "ráðinn"])
-        >>> verb.past_active_strong()
+        >>> verb.past_active()
         réð
         rétt
         réð
@@ -456,20 +435,20 @@ class StrongOldNorseVerb(OldNorseVerb):
         print(apply_u_umlaut(self.sfg3ft) + "ð")
         print(self.sfg3ft)
 
-    def present_mediopassive_strong(self):
+    def present_mediopassive(self):
         pass
 
-    def past_mediopassive_strong(self):
+    def past_mediopassive(self):
         pass
 
-    def present_active_strong_subjunctive(self):
+    def present_active_subjunctive(self):
         """
         Strong verbs
 
         I
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["líta", "lítr", "leit", "litu", "litinn"])
-        >>> verb.present_active_strong_subjunctive()
+        >>> verb.present_active_subjunctive()
         líta
         lítir
         líti
@@ -480,7 +459,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         II
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bjóða", "býðr", "bauð", "buðu", "boðinn"])
-        >>> verb.present_active_strong_subjunctive()
+        >>> verb.present_active_subjunctive()
         bjóða
         bjóðir
         bjóði
@@ -491,7 +470,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         III
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["verða", "verðr", "varð", "urðu", "orðinn"])
-        >>> verb.present_active_strong_subjunctive()
+        >>> verb.present_active_subjunctive()
         verða
         verðir
         verði
@@ -502,7 +481,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         IV
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bera", "berr", "bar", "báru", "borinn"])
-        >>> verb.present_active_strong_subjunctive()
+        >>> verb.present_active_subjunctive()
         bera
         berir
         beri
@@ -513,7 +492,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         V
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["gefa", "gefr", "gaf", "gáfu", "gefinn"])
-        >>> verb.present_active_strong_subjunctive()
+        >>> verb.present_active_subjunctive()
         gefa
         gefir
         gefi
@@ -524,7 +503,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         VI
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["fara", "ferr", "fór", "fóru", "farinn"])
-        >>> verb.present_active_strong_subjunctive()
+        >>> verb.present_active_subjunctive()
         fara
         farir
         fari
@@ -535,7 +514,7 @@ class StrongOldNorseVerb(OldNorseVerb):
         VII
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["ráða", "ræðr", "réð", "réðu", "ráðinn"])
-        >>> verb.present_active_strong_subjunctive()
+        >>> verb.present_active_subjunctive()
         ráða
         ráðir
         ráði
@@ -570,53 +549,108 @@ class StrongOldNorseVerb(OldNorseVerb):
             print(subjunctive_root + "ið")
             print(subjunctive_root + "i")
 
-    def past_active_strong_subjunctive(self):
+    def past_active_subjunctive(self):
         """
         Strong verbs
 
         I
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["líta", "lítr", "leit", "litu", "litinn"])
-        >>> verb.past_active_strong_subjunctive()
+        >>> verb.past_active_subjunctive()
+        lita
+        litir
+        liti
+        litim
+        litið
+        liti
 
         II
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bjóða", "býðr", "bauð", "buðu", "boðinn"])
-        >>> verb.past_active_strong_subjunctive()
+        >>> verb.past_active_subjunctive()
+        byða
+        byðir
+        byði
+        byðim
+        byðið
+        byði
 
         III
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["verða", "verðr", "varð", "urðu", "orðinn"])
-        >>> verb.past_active_strong_subjunctive()
+        >>> verb.past_active_subjunctive()
+        yrða
+        yrðir
+        yrði
+        yrðim
+        yrðið
+        yrði
 
         IV
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bera", "berr", "bar", "báru", "borinn"])
-        >>> verb.past_active_strong_subjunctive()
+        >>> verb.past_active_subjunctive()
+        bæra
+        bærir
+        bæri
+        bærim
+        bærið
+        bæri
 
         V
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["gefa", "gefr", "gaf", "gáfu", "gefinn"])
-        >>> verb.past_active_strong_subjunctive()
+        >>> verb.past_active_subjunctive()
+        gæfa
+        gæfir
+        gæfi
+        gæfim
+        gæfið
+        gæfi
 
         VI
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["fara", "ferr", "fór", "fóru", "farinn"])
-        >>> verb.past_active_strong_subjunctive()
+        >>> verb.past_active_subjunctive()
+        fœra
+        fœrir
+        fœri
+        fœrim
+        fœrið
+        fœri
 
         VII
         >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["ráða", "ræðr", "réð", "réðu", "ráðinn"])
-        >>> verb.past_active_strong_subjunctive()
+        >>> verb.past_active_subjunctive()
+        réða
+        réðir
+        réði
+        réðim
+        réðið
+        réði
 
         :return:
         """
+        subjunctive_root = apply_i_umlaut(self.sfg3ft[:-1])
+        if subjunctive_root[-1] in ['g', 'k']:
+            print(subjunctive_root + "ja")
+        else:
+            print(subjunctive_root + "a")
+        subjunctive_root = subjunctive_root[:-1] if subjunctive_root[-1] == "j" else subjunctive_root
+        print(subjunctive_root + "ir")
+        print(subjunctive_root + "i")
+        print(subjunctive_root + "im")
+        print(subjunctive_root + "ið")
+        print(subjunctive_root + "i")
+
+    def present_mediopassive_subjunctive(self):
         pass
 
-    def present_mediopassive_strong_subjunctive(self):
+    def past_mediopassive_subjunctive(self):
         pass
 
-    def past_mediopassive_strong_subjunctive(self):
+    def past_participle(self):
         pass
 
 
@@ -690,13 +724,13 @@ class WeakOldNorseVerb(OldNorseVerb):
         else:
             raise ValueError("Not a correct argument")
 
-    def present_active_weak(self):
+    def present_active(self):
         """
         Weak verbs
         I
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðinn"])
-        >>> verb.present_active_weak()
+        >>> verb.present_active()
         kalla
         kallar
         kallar
@@ -707,7 +741,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         II
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["mæla", "mælti", "mæltr"])
-        >>> verb.present_active_weak()
+        >>> verb.present_active()
         mæli
         mælir
         mælir
@@ -718,7 +752,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         III
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
-        >>> verb.present_active_weak()
+        >>> verb.present_active()
         tel
         telr
         telr
@@ -729,7 +763,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         IV
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["vaka", "vakti", "vakat"])
-        >>> verb.present_active_weak()
+        >>> verb.present_active()
         vaki
         vakir
         vakir
@@ -844,13 +878,13 @@ class WeakOldNorseVerb(OldNorseVerb):
                 print(stem + "ið")
                 print(self.sng)
 
-    def past_active_weak(self):
+    def past_active(self):
         """
         Weak verbs
         I
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðinn"])
-        >>> verb.past_active_weak()
+        >>> verb.past_active()
         kallaða
         kallaðir
         kallaði
@@ -861,7 +895,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         II
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["mæla", "mælti", "mæltr"])
-        >>> verb.past_active_weak()
+        >>> verb.past_active()
         mælta
         mæltir
         mælti
@@ -872,7 +906,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         III
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
-        >>> verb.past_active_weak()
+        >>> verb.past_active()
         talda
         taldir
         taldi
@@ -883,7 +917,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         IV
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["vaka", "vakti", "vakat"])
-        >>> verb.past_active_weak()
+        >>> verb.past_active()
         vakta
         vaktir
         vakti
@@ -901,19 +935,19 @@ class WeakOldNorseVerb(OldNorseVerb):
         print(apply_u_umlaut(stem)+"uð")
         print(apply_u_umlaut(stem)+"u")
 
-    def present_mediopassive_weak(self):
+    def present_mediopassive(self):
         pass
 
-    def past_mediopassive_weak(self):
+    def past_mediopassive(self):
         pass
 
-    def present_active_weak_subjunctive(self):
+    def present_active_subjunctive(self):
         """
         Weak verbs
         I
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðinn"])
-        >>> verb.present_active_weak_subjunctive()
+        >>> verb.present_active_subjunctive()
         kalla
         kallir
         kalli
@@ -925,7 +959,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         II
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["mæla", "mælti", "mæltr"])
-        >>> verb.present_active_weak_subjunctive()
+        >>> verb.present_active_subjunctive()
         mæla
         mælir
         mæli
@@ -936,7 +970,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         III
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
-        >>> verb.present_active_weak_subjunctive()
+        >>> verb.present_active_subjunctive()
         telja
         telir
         teli
@@ -947,7 +981,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         IV
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["vaka", "vakta", "vakat"])
-        >>> verb.present_active_weak_subjunctive()
+        >>> verb.present_active_subjunctive()
         vaka
         vakir
         vaki
@@ -968,13 +1002,13 @@ class WeakOldNorseVerb(OldNorseVerb):
         print(subjunctive_root+"ið")
         print(subjunctive_root+"i")
 
-    def past_active_weak_subjunctive(self):
+    def past_active_subjunctive(self):
         """
         Weak verbs
         I
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðinn"])
-        >>> verb.past_active_weak_subjunctive()
+        >>> verb.past_active_subjunctive()
         kallaða
         kallaðir
         kallaði
@@ -985,7 +1019,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         II
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["mæla", "mælti", "mæltr"])
-        >>> verb.past_active_weak_subjunctive()
+        >>> verb.past_active_subjunctive()
         mælta
         mæltir
         mælti
@@ -996,7 +1030,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         III
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
-        >>> verb.past_active_weak_subjunctive()
+        >>> verb.past_active_subjunctive()
         telda
         teldir
         teldi
@@ -1008,7 +1042,7 @@ class WeakOldNorseVerb(OldNorseVerb):
         IV
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["vaka", "vakti", "vakat"])
-        >>> verb.past_active_weak_subjunctive()
+        >>> verb.past_active_subjunctive()
         vekta
         vektir
         vekti
@@ -1040,11 +1074,70 @@ class WeakOldNorseVerb(OldNorseVerb):
             print(subjunctive_root + "ið")
             print(subjunctive_root + "i")
 
-    def present_mediopassive_weak_subjunctive(self):
+    def present_mediopassive_subjunctive(self):
         pass
 
-    def past_mediopassive_weak_subjunctive(self):
+    def past_mediopassive_subjunctive(self):
         pass
+
+    def past_participle(self):
+        """
+
+        Weak verbs
+        I
+        >>> verb = WeakOldNorseVerb()
+        >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðinn"])
+        >>> verb.past_participle()
+
+        II
+        >>> verb = WeakOldNorseVerb()
+        >>> verb.set_canonic_forms(["mæla", "mælti", "mæltr"])
+        >>> verb.past_participle()
+
+        III
+        >>> verb = WeakOldNorseVerb()
+        >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
+        >>> verb.past_participle()
+
+        IV
+        >>> verb = WeakOldNorseVerb()
+        >>> verb.set_canonic_forms(["vaka", "vakti", "vakat"])
+        >>> verb.past_participle()
+
+        :return:
+        """
+        # masculine
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+        #
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+
+        # feminine
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+        #
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+
+        # neuter
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+        #
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
+        # print(self.stgken)
 
     def classify(self):
         if self.sng in ["segja", "þegja"]:
