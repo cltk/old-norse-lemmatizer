@@ -176,32 +176,47 @@ class StrongOldNorseVerb(OldNorseVerb):
         Strong verbs
 
         I
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["líta", "lítr", "leit", "litu", "litinn"])
+        >>> verb.subclass
+        1
 
         II
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bjóða", "býðr", "bauð", "buðu", "boðinn"])
+        >>> verb.subclass
+        2
 
         III
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["verða", "verðr", "varð", "urðu", "orðinn"])
+        >>> verb.subclass
+        3
 
         IV
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bera", "berr", "bar", "báru", "borinn"])
+        >>> verb.subclass
+        4
 
         V
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["gefa", "gefr", "gaf", "gáfu", "gefinn"])
+        >>> verb.subclass
+        5
 
         VI
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["fara", "ferr", "fór", "fóru", "farinn"])
+        >>> verb.subclass
+        6
+
 
         VII
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["ráða", "ræðr", "réð", "réðu", "ráðinn"])
+        >>> verb.subclass
+        7
 
         :param canonic_forms:
         :return:
@@ -212,12 +227,51 @@ class StrongOldNorseVerb(OldNorseVerb):
             self.name = sng
 
             self.sng = sng
+            self.s_sng = s.syllabify_ssp(self.sng)
+            self.sp_sng = s_ipa.syllabify_phonemes(transcriber.text_to_phonemes(self.sng))
+
             self.sfg3en = sfg3en
+            self.s_sfg3en = s.syllabify_ssp(self.sfg3en)
+            self.sp_sfg3en = s_ipa.syllabify_phonemes(transcriber.text_to_phonemes(self.sfg3en))
+
             self.sfg3et = sfg3et
+            self.s_sfg3et = s.syllabify_ssp(self.sfg3et)
+            self.sp_sfg3et = s_ipa.syllabify_phonemes(transcriber.text_to_phonemes(self.sfg3et))
+
             self.sfg3ft = sfg3ft
+            self.s_sfg3ft = s.syllabify_ssp(self.sfg3ft)
+            self.sp_sfg3ft = s_ipa.syllabify_phonemes(transcriber.text_to_phonemes(self.sfg3ft))
+
             self.stgken = stgken
+            self.s_stgken = s.syllabify_ssp(self.stgken)
+            self.sp_stgken = s_ipa.syllabify_phonemes(transcriber.text_to_phonemes(self.stgken))
+
+            self.classify()
         else:
             raise ValueError("Not a correct argument")
+
+    def classify(self):
+
+        signature = ["".join(Syllable(self.s_sng[0], VOWELS, CONSONANTS).nucleus),
+                     "".join(Syllable(self.s_sfg3en[0], VOWELS, CONSONANTS).nucleus),
+                     "".join(Syllable(self.s_sfg3et[0], VOWELS, CONSONANTS).nucleus),
+                     "".join(Syllable(self.s_sfg3ft[0], VOWELS, CONSONANTS).nucleus),
+                     "".join(Syllable(self.s_stgken[0], VOWELS, CONSONANTS).nucleus)
+                     ]
+        if signature == ['í', 'í', 'ei', 'i', 'i']:
+            self.subclass = 1
+        elif signature == ['ó', 'ý', 'au', 'u', 'o']:
+            self.subclass = 2
+        elif signature == ['e', 'e', 'a', 'u', 'o']:
+            self.subclass = 3
+        elif signature == ['e', 'e', 'a', 'á', 'o']:
+            self.subclass = 4
+        elif signature == ['e', 'e', 'a', 'á', 'e']:
+            self.subclass = 5
+        elif signature == ['a', 'e', 'ó', 'ó', 'a']:
+            self.subclass = 6
+        elif signature == ['á', 'æ', 'é', 'é', 'á']:
+            self.subclass = 7
 
     def present_active_strong(self):
         """
@@ -413,32 +467,82 @@ class StrongOldNorseVerb(OldNorseVerb):
         Strong verbs
 
         I
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["líta", "lítr", "leit", "litu", "litinn"])
+        >>> verb.present_active_strong_subjunctive()
+        líta
+        lítir
+        líti
+        lítim
+        lítið
+        líti
 
         II
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bjóða", "býðr", "bauð", "buðu", "boðinn"])
+        >>> verb.present_active_strong_subjunctive()
+        bjóða
+        bjóðir
+        bjóði
+        bjóðim
+        bjóðið
+        bjóði
 
         III
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["verða", "verðr", "varð", "urðu", "orðinn"])
+        >>> verb.present_active_strong_subjunctive()
+        verða
+        verðir
+        verði
+        verðim
+        verðið
+        verði
 
         IV
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bera", "berr", "bar", "báru", "borinn"])
+        >>> verb.present_active_strong_subjunctive()
+        bera
+        berir
+        beri
+        berim
+        berið
+        beri
 
         V
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["gefa", "gefr", "gaf", "gáfu", "gefinn"])
+        >>> verb.present_active_strong_subjunctive()
+        gefa
+        gefir
+        gefi
+        gefim
+        gefið
+        gefi
 
         VI
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["fara", "ferr", "fór", "fóru", "farinn"])
+        >>> verb.present_active_strong_subjunctive()
+        fara
+        farir
+        fari
+        farim
+        farið
+        fari
 
         VII
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["ráða", "ræðr", "réð", "réðu", "ráðinn"])
+        >>> verb.present_active_strong_subjunctive()
+        ráða
+        ráðir
+        ráði
+        ráðim
+        ráðið
+        ráði
+
         :return:
         """
         if self.sng == "vera":
@@ -471,32 +575,40 @@ class StrongOldNorseVerb(OldNorseVerb):
         Strong verbs
 
         I
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["líta", "lítr", "leit", "litu", "litinn"])
+        >>> verb.past_active_strong_subjunctive()
 
         II
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bjóða", "býðr", "bauð", "buðu", "boðinn"])
+        >>> verb.past_active_strong_subjunctive()
 
         III
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["verða", "verðr", "varð", "urðu", "orðinn"])
+        >>> verb.past_active_strong_subjunctive()
 
         IV
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["bera", "berr", "bar", "báru", "borinn"])
+        >>> verb.past_active_strong_subjunctive()
 
         V
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["gefa", "gefr", "gaf", "gáfu", "gefinn"])
+        >>> verb.past_active_strong_subjunctive()
 
         VI
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["fara", "ferr", "fór", "fóru", "farinn"])
+        >>> verb.past_active_strong_subjunctive()
 
         VII
-        >>> verb = OldNorseVerb()
+        >>> verb = StrongOldNorseVerb()
         >>> verb.set_canonic_forms(["ráða", "ræðr", "réð", "réðu", "ráðinn"])
+        >>> verb.past_active_strong_subjunctive()
+
         :return:
         """
         pass
