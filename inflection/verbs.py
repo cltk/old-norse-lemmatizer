@@ -11,7 +11,7 @@ from cltk.corpus.old_norse.syllabifier import invalid_onsets, VOWELS, CONSONANTS
 from cltk.inflection.utils import Number
 from cltk.phonology.utils import Length, Transcriber
 
-from inflection.phonemic_rules import apply_i_umlaut, apply_u_umlaut
+from inflection.phonemic_rules import apply_i_umlaut, apply_u_umlaut, add_r_ending
 
 __author__ = ["Clément Besnier <clemsciences@aol.com>", ]
 
@@ -651,7 +651,283 @@ class StrongOldNorseVerb(OldNorseVerb):
         pass
 
     def past_participle(self):
-        pass
+        """
+        Strong verbs
+
+        I
+        >>> verb = StrongOldNorseVerb()
+        >>> verb.set_canonic_forms(["líta", "lítr", "leit", "litu", "litinn"])
+        >>> verb.past_participle()
+        litinn
+        litinn
+        litnum
+        litins
+        litnir
+        litna
+        litnum
+        litinna
+        litin
+        litna
+        litinni
+        litinnar
+        litnar
+        litnar
+        litnum
+        litinna
+        litit
+        litit
+        litnu
+        litins
+        litit
+        litit
+        litnum
+        litinna
+
+        II
+        >>> verb = StrongOldNorseVerb()
+        >>> verb.set_canonic_forms(["bjóða", "býðr", "bauð", "buðu", "boðinn"])
+        >>> verb.past_participle()
+        boðinn
+        boðinn
+        boðnum
+        boðins
+        boðnir
+        boðna
+        boðnum
+        boðinna
+        boðin
+        boðna
+        boðinni
+        boðinnar
+        boðnar
+        boðnar
+        boðnum
+        boðinna
+        boðit
+        boðit
+        boðnu
+        boðins
+        boðit
+        boðit
+        boðnum
+        boðinna
+
+        III
+        >>> verb = StrongOldNorseVerb()
+        >>> verb.set_canonic_forms(["verða", "verðr", "varð", "urðu", "orðinn"])
+        >>> verb.past_participle()
+        orðinn
+        orðinn
+        orðnum
+        orðins
+        orðnir
+        orðna
+        orðnum
+        orðinna
+        orðin
+        orðna
+        orðinni
+        orðinnar
+        orðnar
+        orðnar
+        orðnum
+        orðinna
+        orðit
+        orðit
+        orðnu
+        orðins
+        orðit
+        orðit
+        orðnum
+        orðinna
+
+        IV
+        >>> verb = StrongOldNorseVerb()
+        >>> verb.set_canonic_forms(["bera", "berr", "bar", "báru", "borinn"])
+        >>> verb.past_participle()
+        borinn
+        borinn
+        bornum
+        borins
+        bornir
+        borna
+        bornum
+        borinna
+        borin
+        borna
+        borinni
+        borinnar
+        bornar
+        bornar
+        bornum
+        borinna
+        borit
+        borit
+        bornu
+        borins
+        borit
+        borit
+        bornum
+        borinna
+
+        V
+        >>> verb = StrongOldNorseVerb()
+        >>> verb.set_canonic_forms(["gefa", "gefr", "gaf", "gáfu", "gefinn"])
+        >>> verb.past_participle()
+        gefinn
+        gefinn
+        gefnum
+        gefins
+        gefnir
+        gefna
+        gefnum
+        gefinna
+        gefin
+        gefna
+        gefinni
+        gefinnar
+        gefnar
+        gefnar
+        gefnum
+        gefinna
+        gefit
+        gefit
+        gefnu
+        gefins
+        gefit
+        gefit
+        gefnum
+        gefinna
+
+        VI
+        >>> verb = StrongOldNorseVerb()
+        >>> verb.set_canonic_forms(["fara", "ferr", "fór", "fóru", "farinn"])
+        >>> verb.past_participle()
+        farinn
+        farinn
+        förnum
+        farins
+        farnir
+        farna
+        förnum
+        farinna
+        farin
+        farna
+        farinni
+        farinnar
+        farnar
+        farnar
+        förnum
+        farinna
+        farit
+        farit
+        förnu
+        farins
+        farit
+        farit
+        förnum
+        farinna
+
+        VII
+        >>> verb = StrongOldNorseVerb()
+        >>> verb.set_canonic_forms(["ráða", "ræðr", "réð", "réðu", "ráðinn"])
+        >>> verb.past_participle()
+        ráðinn
+        ráðinn
+        ráðnum
+        ráðins
+        ráðnir
+        ráðna
+        ráðnum
+        ráðinna
+        ráðin
+        ráðna
+        ráðinni
+        ráðinnar
+        ráðnar
+        ráðnar
+        ráðnum
+        ráðinna
+        ráðit
+        ráðit
+        ráðnu
+        ráðins
+        ráðit
+        ráðit
+        ráðnum
+        ráðinna
+
+        :return:
+        """
+        pp_stem = self.stgken[:-3]  # past participle steù
+        pp_shortened_stem = self.stgken[:-1]  # past participle steù
+        # masculine
+        print(pp_stem+"inn")
+        print(pp_stem+"inn")
+        print(apply_u_umlaut(pp_stem) + "num")
+        print(pp_stem + "ins")
+
+        print(pp_stem + "nir")
+        print(pp_stem + "na")
+        print(apply_u_umlaut(pp_stem) + "num")
+        print(pp_stem + "inna")
+
+        # feminine
+        print(pp_stem+"in")
+        print(pp_stem + "na")
+        print(pp_stem + "inni")
+        print(pp_stem + "innar")
+
+        print(pp_stem + "nar")
+        print(pp_stem + "nar")
+        print(apply_u_umlaut(pp_stem) + "num")
+        print(pp_stem + "inna")
+
+        # neuter
+        print(pp_stem+"it")
+        print(pp_stem+"it")
+        print(apply_u_umlaut(pp_stem) + "nu")
+        print(pp_stem + "ins")
+
+        print(pp_stem+"it")
+        print(pp_stem+"it")
+        print(apply_u_umlaut(pp_stem) + "num")
+        print(pp_stem + "inna")
+        # pp_stem = self.stgken[:-1]  # past participle steù
+        # pp_shortened_stem = self.stgken[:-1]  # past participle steù
+        # # masculine
+        # print(add_r_ending(pp_stem))
+        # print(add_r_ending(pp_stem))
+        # print(pp_stem + "an")
+        # print(apply_u_umlaut(pp_stem) + "um")
+        # print(pp_stem + "s")
+        #
+        # print(pp_stem + "ir")
+        # print(pp_stem + "a")
+        # print(apply_u_umlaut(pp_stem) + "um")
+        # print(pp_stem + "ra")
+        #
+        # # feminine
+        # print(apply_u_umlaut(pp_stem))
+        # print(pp_stem + "a")
+        # print(pp_stem + "ri")
+        # print(pp_stem + "rar")
+        #
+        # print(pp_stem + "ar")
+        # print(pp_stem + "ar")
+        # print(apply_u_umlaut(pp_stem) + "um")
+        # print(pp_stem + "ra")
+        #
+        # # neuter
+        # print(add_t_ending(pp_stem))
+        # print(add_t_ending(pp_stem))
+        # print(apply_u_umlaut(pp_stem) + "u")
+        # print(pp_stem + "s")
+        #
+        # print(apply_u_umlaut(pp_stem))
+        # print(apply_u_umlaut(pp_stem))
+        # print(apply_u_umlaut(pp_stem) + "um")
+        # print(pp_stem + "ra")
 
 
 class WeakOldNorseVerb(OldNorseVerb):
@@ -1086,58 +1362,142 @@ class WeakOldNorseVerb(OldNorseVerb):
         Weak verbs
         I
         >>> verb = WeakOldNorseVerb()
-        >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðinn"])
+        >>> verb.set_canonic_forms(["kalla", "kallaði", "kallaðr"])
         >>> verb.past_participle()
+        kallaðr
+        kallaðan
+        kölluðum
+        kallaðs
+        kallaðir
+        kallaða
+        kölluðum
+        kallaðra
+        kölluð
+        kallaða
+        kallaðri
+        kallaðrar
+        kallaðar
+        kallaðar
+        kölluðum
+        kallaðra
+        kallatt
+        kallatt
+        kölluðu
+        kallaðs
+        kölluð
+        kölluð
+        kölluðum
+        kallaðra
 
         II
         >>> verb = WeakOldNorseVerb()
         >>> verb.set_canonic_forms(["mæla", "mælti", "mæltr"])
         >>> verb.past_participle()
+        mæltr
+        mæltan
+        mæltum
+        mælts
+        mæltir
+        mælta
+        mæltum
+        mæltra
+        mælt
+        mælta
+        mæltri
+        mæltrar
+        mæltar
+        mæltar
+        mæltum
+        mæltra
+        mælt
+        mælt
+        mæltu
+        mælts
+        mælt
+        mælt
+        mæltum
+        mæltra
 
         III
-        >>> verb = WeakOldNorseVerb()
-        >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
-        >>> verb.past_participle()
+        # >>> verb = WeakOldNorseVerb()
+        # >>> verb.set_canonic_forms(["telja", "taldi", "talinn"])
+        # >>> verb.past_participle()
 
         IV
-        >>> verb = WeakOldNorseVerb()
-        >>> verb.set_canonic_forms(["vaka", "vakti", "vakat"])
-        >>> verb.past_participle()
+        # >>> verb = WeakOldNorseVerb()
+        # >>> verb.set_canonic_forms(["vaka", "vakti", "vakat"])
+        # >>> verb.past_participle()
 
         :return:
         """
-        # masculine
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
-        #
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
+        if self.subclass in [1, 2]:
+            pp_stem = self.stgken[:-1]  # past participle stem
+            # masculine
+            print(add_r_ending(pp_stem))
+            print(pp_stem+"an")
+            print(apply_u_umlaut(pp_stem)+"um")
+            print(pp_stem+"s")
 
-        # feminine
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
-        #
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
+            print(pp_stem+"ir")
+            print(pp_stem+"a")
+            print(apply_u_umlaut(pp_stem)+"um")
+            print(pp_stem+"ra")
 
-        # neuter
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
-        #
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
-        # print(self.stgken)
+            # feminine
+            print(apply_u_umlaut(pp_stem))
+            print(pp_stem+"a")
+            print(pp_stem+"ri")
+            print(pp_stem+"rar")
+
+            print(pp_stem+"ar")
+            print(pp_stem+"ar")
+            print(apply_u_umlaut(pp_stem)+"um")
+            print(pp_stem+"ra")
+
+            # neuter
+            print(add_t_ending(pp_stem))
+            print(add_t_ending(pp_stem))
+            print(apply_u_umlaut(pp_stem)+"u")
+            print(pp_stem+"s")
+
+            print(apply_u_umlaut(pp_stem))
+            print(apply_u_umlaut(pp_stem))
+            print(apply_u_umlaut(pp_stem)+"um")
+            print(pp_stem+"ra")
+        elif self.subclass in [3, 4]:
+            pp_stem = self.stgken[:-1]  # past participle stem
+            # masculine
+            print(add_r_ending(pp_stem))
+            print(pp_stem + "an")
+            print(apply_u_umlaut(pp_stem) + "um")
+            print(pp_stem + "s")
+
+            print(pp_stem + "ir")
+            print(pp_stem + "a")
+            print(apply_u_umlaut(pp_stem) + "um")
+            print(pp_stem + "ra")
+
+            # feminine
+            print(apply_u_umlaut(pp_stem))
+            print(pp_stem + "a")
+            print(pp_stem + "ri")
+            print(pp_stem + "rar")
+
+            print(pp_stem + "ar")
+            print(pp_stem + "ar")
+            print(apply_u_umlaut(pp_stem) + "um")
+            print(pp_stem + "ra")
+
+            # neuter
+            print(add_t_ending(pp_stem))
+            print(add_t_ending(pp_stem))
+            print(apply_u_umlaut(pp_stem) + "u")
+            print(pp_stem + "s")
+
+            print(apply_u_umlaut(pp_stem))
+            print(apply_u_umlaut(pp_stem))
+            print(apply_u_umlaut(pp_stem) + "um")
+            print(pp_stem + "ra")
 
     def classify(self):
         if self.sng in ["segja", "þegja"]:
