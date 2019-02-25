@@ -1,2 +1,3 @@
 -e git+https://github.com/clemsciences/cltk.git@old-norse-verbs#egg=cltk
 numpy
+-e git+https://github.com/cltk/old_norse_dictionary_zoega.git#egg=zoegas
